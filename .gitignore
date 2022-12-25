@@ -1,0 +1,25 @@
+# Ignore everything.
+*
+
+# Except sources.
+!src
+!src/**
+
+# Except tests.
+!tests
+!tests/**
+
+# Except idea.
+!.idea
+!.idea/**
+
+# Except configuration files.
+!build.gradle
+!.gitignore
+!gradlew
+!gradlew.bat
+!settings.gradle
+
+# Except content.
+!LICENSE.md
+!README.md
