@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+    id 'groovy'
+    id 'jacoco'
+    id 'org.checkerframework' version "0.6.20"
+}
+
+group 'org.aneo.rover'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+}
+
+dependencies {
+    testImplementation 'org.codehaus.groovy:groovy-all:3.0.8'
+    testImplementation 'org.spockframework:spock-core:2.0-groovy-3.0'
+
+    implementation platform('io.projectreactor:reactor-bom:2022.0.1')
+    implementation 'io.projectreactor:reactor-core'
+}
+
+test {
+    useJUnitPlatform()
+}
