@@ -52,13 +52,13 @@ git clone https://github.com/cedric-demongivert/aneo-2022.git
 2. Construire
 
 ```bash
-gradlew
+./gradlew
 ```
 
 3. Exécuter
 
 ```bash
-java -jar rover ./data/example.txt
+java -jar ./rover.jar ./data/example.txt
 ```
 
 # Documents
