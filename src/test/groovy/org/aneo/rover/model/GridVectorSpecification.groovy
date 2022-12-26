@@ -99,6 +99,20 @@ class GridVectorSpecification extends Specification {
     /**
      *
      */
+    def "#clamp() clamps the vector to a given pair of constraints" () {
+        given:
+        GridVector vector = new GridVector(5, 3)
+
+        when:
+        vector.clamp(4, 4)
+
+        then:
+        vector == new GridVector(4, 3)
+    }
+
+    /**
+     *
+     */
     def "#clear() resets the vector to zero" () {
         given:
         GridVector vector = new GridVector(5, 3)
