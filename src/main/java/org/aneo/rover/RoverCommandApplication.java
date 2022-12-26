@@ -1,7 +1,7 @@
 package org.aneo.rover;
 
-import org.aneo.io.RoverGrammarLexer;
-import org.aneo.io.RoverGrammarParser;
+import org.aneo.rover.io.RoverGrammarLexer;
+import org.aneo.rover.io.RoverGrammarParser;
 import org.aneo.rover.io.RoverRunner;
 import org.antlr.v4.runtime.BufferedTokenStream;
 import org.antlr.v4.runtime.CharStreams;

@@ -1,7 +1,7 @@
 grammar RoverGrammar;
 
 @header {
-    package org.aneo.io;
+    package org.aneo.rover.io;
 }
 
 stream: SPACES? EOF |
