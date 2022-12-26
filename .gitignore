@@ -9,6 +9,10 @@
 !data
 !data/**
 
+# Except gradlew.
+!gradle
+!gradle/**
+
 # Except configuration files.
 !build.gradle
 !.gitignore
