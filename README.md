@@ -43,19 +43,21 @@ The program will be runned with this command line:
 
 # Installation
 
-1. Cloner
+1. Se positionner dans un dossier vide
+
+2. Cloner
 
 ```bash
-git clone https://github.com/cedric-demongivert/aneo-2022.git
+git clone https://github.com/cedric-demongivert/aneo-2022.git .
 ```
 
-2. Construire
+3. Construire
 
 ```bash
 ./gradlew
 ```
 
-3. Exécuter
+4. Exécuter
 
 ```bash
 java -jar ./rover.jar ./data/example.txt
