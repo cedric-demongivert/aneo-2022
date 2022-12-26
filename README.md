@@ -61,7 +61,21 @@ git clone https://github.com/cedric-demongivert/aneo-2022.git
 java -jar ./rover.jar ./data/example.txt
 ```
 
-# Documents
+# IDE
+
+## Intellij
+
+```bash
+./gradlew idea
+```
+
+## Eclipse
+
+```bash
+./gradlew eclipse
+```
+
+# Organisation
 
 1. **src/main/java** : Code source.
 2. **src/main/antlr** : Grammaire ANTLR v4.
