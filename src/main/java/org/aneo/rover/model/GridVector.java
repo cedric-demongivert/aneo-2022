@@ -67,6 +67,15 @@ public final class GridVector implements Cloneable {
     /**
      *
      */
+    public @NonNull GridVector clamp(final int maxX, final int maxY) {
+        this.x = Math.min(x, maxX);
+        this.y += Math.min(y, maxY);
+        return this;
+    }
+
+    /**
+     *
+     */
     public @NonNull GridVector add(final int x, final int y) {
         this.x += x;
         this.y += y;

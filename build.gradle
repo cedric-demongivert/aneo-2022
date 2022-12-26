@@ -1,24 +1,46 @@
 plugins {
+    id 'idea'
+    id 'eclipse'
     id 'java'
     id 'groovy'
     id 'jacoco'
-    id 'org.checkerframework' version "0.6.20"
+    id 'antlr'
+    id 'org.checkerframework' version '0.6.20'
 }
+
+defaultTasks 'clean', 'build', 'jacocoTestReport', 'jar'
 
 group 'org.aneo.rover'
 version '1.0-SNAPSHOT'
 
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
 repositories {
     mavenCentral()
-    maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+    maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
 }
 
 dependencies {
+    antlr "org.antlr:antlr4:4.11.1"
+
+    implementation 'org.antlr:antlr4-runtime:4.11.1'
+
     testImplementation 'org.codehaus.groovy:groovy-all:3.0.8'
     testImplementation 'org.spockframework:spock-core:2.0-groovy-3.0'
+}
 
-    implementation platform('io.projectreactor:reactor-bom:2022.0.1')
-    implementation 'io.projectreactor:reactor-core'
+jar {
+    manifest {
+        attributes "Main-Class": "org.aneo.rover.RoverCommandApplication"
+    }
+
+    destinationDirectory = file("$rootDir")
+    archiveName = 'rover.jar'
+
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
 }
 
 test {

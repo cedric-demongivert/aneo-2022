@@ -85,7 +85,7 @@ class GridVectorSpecification extends Specification {
     /**
      *
      */
-    def "#add(@NonNull final GridVector) adds the given vector coordinates" () {
+    def "#add(@NonNull final GridVector) adds the given vector" () {
         given:
         GridVector vector = new GridVector(5, 3)
 
@@ -113,7 +113,7 @@ class GridVectorSpecification extends Specification {
     /**
      *
      */
-    def "#clone() return a copy of the vector" () {
+    def "#clone() returns a copy of the vector" () {
         given:
         GridVector vector = new GridVector(5, 3)
 
@@ -128,7 +128,7 @@ class GridVectorSpecification extends Specification {
     /**
      *
      */
-    def "#equals(@Nullable final Object) return false if called with a null reference" () {
+    def "#equals(@Nullable final Object) returns false if called with a null reference" () {
         given:
         GridVector vector = new GridVector(5, 3)
 
@@ -139,7 +139,7 @@ class GridVectorSpecification extends Specification {
     /**
      *
      */
-    def "#equals(@Nullable final Object) return true if called over itself" () {
+    def "#equals(@Nullable final Object) returns true if called over itself" () {
         given:
         GridVector vector = new GridVector(5, 3)
 
@@ -150,7 +150,7 @@ class GridVectorSpecification extends Specification {
     /**
      *
      */
-    def "#equals(@Nullable final Object) return false if called on a non-vector object" () {
+    def "#equals(@Nullable final Object) returns false if called on a non-vector object" () {
         given:
         GridVector vector = new GridVector(5, 3)
 
@@ -161,7 +161,7 @@ class GridVectorSpecification extends Specification {
     /**
      *
      */
-    def "#equals(@Nullable final Object) return true if both instances are equals" () {
+    def "#equals(@Nullable final Object) returns true if both instances are equals" () {
         given:
         GridVector vector = new GridVector(5, 3)
 
@@ -172,7 +172,7 @@ class GridVectorSpecification extends Specification {
     /**
      *
      */
-    def "#equals(@Nullable final Object) return true if both instances are not equals" () {
+    def "#equals(@Nullable final Object) returns false if both instances are not equals" () {
         given:
         GridVector vector = new GridVector(5, 3)
 

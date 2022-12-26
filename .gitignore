@@ -5,13 +5,9 @@
 !src
 !src/**
 
-# Except tests.
-!tests
-!tests/**
-
-# Except idea.
-!.idea
-!.idea/**
+# Except data.
+!data
+!data/**
 
 # Except configuration files.
 !build.gradle

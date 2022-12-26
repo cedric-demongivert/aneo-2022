@@ -8,11 +8,11 @@ import java.util.Objects;
 /**
  *
  */
-public final class RoverCoordinates implements Cloneable {
+public final class Rover implements Cloneable {
     /**
      *
      */
-    public static @NonNull final RoverCoordinates DEFAULT = new RoverCoordinates();
+    public static @NonNull final Rover DEFAULT = new Rover();
 
     /**
      *
@@ -27,7 +27,7 @@ public final class RoverCoordinates implements Cloneable {
     /**
      *
      */
-    public RoverCoordinates() {
+    public Rover() {
         this.location = new GridVector();
         this.direction = Direction.DEFAULT;
     }
@@ -35,7 +35,7 @@ public final class RoverCoordinates implements Cloneable {
     /**
      *
      */
-    public RoverCoordinates(@NonNull final RoverCoordinates toCopy) {
+    public Rover(@NonNull final Rover toCopy) {
         this.location = toCopy.location.clone();
         this.direction = toCopy.direction;
     }
@@ -43,7 +43,7 @@ public final class RoverCoordinates implements Cloneable {
     /**
      *
      */
-    public RoverCoordinates(@NonNull final GridVector coordinates, @NonNull final Direction direction) {
+    public Rover(@NonNull final GridVector coordinates, @NonNull final Direction direction) {
         this.location = coordinates.clone();
         this.direction = direction;
     }
@@ -51,7 +51,7 @@ public final class RoverCoordinates implements Cloneable {
     /**
      *
      */
-    public RoverCoordinates(final int x, final int y, @NonNull final Direction direction) {
+    public Rover(final int x, final int y, @NonNull final Direction direction) {
         this.location = new GridVector(x, y);
         this.direction = direction;
     }
@@ -59,7 +59,7 @@ public final class RoverCoordinates implements Cloneable {
     /**
      *
      */
-    public @NonNull RoverCoordinates left() {
+    public @NonNull Rover left() {
         this.direction = this.direction.left();
         return this;
     }
@@ -67,7 +67,7 @@ public final class RoverCoordinates implements Cloneable {
     /**
      *
      */
-    public @NonNull RoverCoordinates right() {
+    public @NonNull Rover right() {
         this.direction = this.direction.right();
         return this;
     }
@@ -75,15 +75,7 @@ public final class RoverCoordinates implements Cloneable {
     /**
      *
      */
-    public @NonNull RoverCoordinates negate() {
-        this.direction = this.direction.negate();
-        return this;
-    }
-
-    /**
-     *
-     */
-    public @NonNull RoverCoordinates move() {
+    public @NonNull Rover move() {
         this.location.add(DirectionVectors.get(this.direction));
         return this;
     }
@@ -99,7 +91,15 @@ public final class RoverCoordinates implements Cloneable {
     /**
      *
      */
-    public void copy(@NonNull final RoverCoordinates toCopy) {
+    public void set(final int x, final int y, @NonNull final Direction direction) {
+        this.location.set(x, y);
+        this.direction = direction;
+    }
+
+    /**
+     *
+     */
+    public void copy(@NonNull final Rover toCopy) {
         this.location.copy(toCopy.location);
         this.direction = toCopy.direction;
     }
@@ -108,14 +108,14 @@ public final class RoverCoordinates implements Cloneable {
      *
      */
     @Override
-    public @NonNull RoverCoordinates clone() {
-        return new RoverCoordinates(this);
+    public @NonNull Rover clone() {
+        return new Rover(this);
     }
 
     /**
      *
      */
-    public @NonNull RoverCoordinates clear() {
+    public @NonNull Rover clear() {
         this.location.clear();
         this.direction = Direction.DEFAULT;
         return this;
@@ -129,8 +129,8 @@ public final class RoverCoordinates implements Cloneable {
         if (other == null) return false;
         if (other == this) return true;
 
-        if (other instanceof RoverCoordinates) {
-            @NonNull final RoverCoordinates otherCoordinates = (RoverCoordinates) other;
+        if (other instanceof Rover) {
+            @NonNull final Rover otherCoordinates = (Rover) other;
 
             return (
                 otherCoordinates.direction == this.direction &&

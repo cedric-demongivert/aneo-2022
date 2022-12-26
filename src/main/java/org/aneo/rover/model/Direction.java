@@ -29,11 +29,4 @@ public enum Direction {
     public @NonNull Direction left() {
         return Direction.values()[(this.ordinal() + 3) % 4];
     }
-
-    /**
-     * @return The opposite direction.
-     */
-    public @NonNull Direction negate() {
-        return Direction.values()[(this.ordinal() + 2) % 4];
-    }
 }
